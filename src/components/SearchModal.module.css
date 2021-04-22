@@ -1,0 +1,10 @@
+.red{
+    color: red;
+}
+.container{
+    display: flex;
+    background: red;
+    width: 200px;   }
+.items{
+    color: red;
+}
