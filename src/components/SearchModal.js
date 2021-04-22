@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Button } from  'react-bootstrap'
-import styles from './SearchModal.module.css';
+// import styles from './SearchModal.module.css';
 export default function SearchModal(props) {
     return (
         <div>

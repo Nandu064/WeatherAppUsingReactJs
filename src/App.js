@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'weather-icons/css/weather-icons.css';
 import React from 'react';
 import axios from 'axios'
-import {Button} from 'react-bootstrap'
-import SearchModal from './components/SearchModal'
+// import {Button} from 'react-bootstrap'
+// import SearchModal from './components/SearchModal'
 // import {useState,useEffect} from 'react'
 import Weather from './components/Weather'
 
@@ -18,12 +18,17 @@ class App extends React.Component {
   constructor(){
     super();
     this.state={
-      //showModal : false,
       city:'',
-      country:''
+      country:'',
+      temp:0,
+      minTemp:0,
+      maxTemp:0,
+      //showModal : false,
+      
     };
   }
   getWeather = async ()=>{
+    // Using Fetch Method
     // const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Nandyal&appid=${API_key}`);
     // const response = await api_call.json();
     // console.log(response);
@@ -43,14 +48,22 @@ class App extends React.Component {
           const data = res.data;
             this.setState({
               city:data.name,
-              country:data.sys.country
+              country:data.sys.country,
+              temp:data.main.temp,
+              minTemp:data.main.temp_min,
+              maxTemp:data.main.temp_max
             });
         });
   }
   render(){
     return (
     <div className="App">
-      <Weather city={this.state.city} country={this.state.country}/>
+      <Weather
+        city={this.state.city}
+        country={this.state.country}
+        temp={this.state.temp}
+        minTemp={this.state.minTemp}
+        maxTemp={this.state.maxTemp}/>
       {/* For Modal opening button */}
         {/* <div class="container">
           <input type="search" placeholder="Enter the City"/>

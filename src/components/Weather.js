@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card} from 'react-bootstrap'
+// import {Card} from 'react-bootstrap'
 export default function Weather(props) {
     return (
         <div className="container">
@@ -8,9 +8,9 @@ export default function Weather(props) {
                 <h5 className="py-4">
                     <i className="wi wi-day-sunny display-1"></i>
                 </h5>
-                <h1 className="py-2">25&deg;</h1>
+                <h1 className="py-2">{props.temp}&deg;</h1>
                 {/* For min max temp display */}
-                {minmaxTemp(24,19)}
+                {minmaxTemp(28,14)}
                 <h4 className="py-2"> Slow Rain</h4>
                 
             </div>
