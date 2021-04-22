@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## This is the basic react project and used react-bootstrap for styling along with CSS
+
+### Download this repo and extract in your PC
+
+#### Use npm install to install all the dependencies.
+
+# Not a complete project
+
+
 ## Available Scripts
 
 In the project directory, you can run:
