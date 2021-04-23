@@ -6,12 +6,12 @@ export default function Weather(props) {
             <div className="cards">
                 <h1>{props.city},{props.country}</h1>
                 <h5 className="py-4">
-                    <i className="wi wi-day-sunny display-1"></i>
+                    <i className={`wi ${props.weatherIcon} display-1`}></i>
                 </h5>
-                <h1 className="py-2">{props.temp}&deg;</h1>
+                <h1 className="py-2">{props.temp}&deg;c</h1>
                 {/* For min max temp display */}
-                {minmaxTemp(28,14)}
-                <h4 className="py-2"> Slow Rain</h4>
+                {minmaxTemp(props.minTemp,props.maxTemp)}
+                <h4 className="py-2">{props.description}</h4>
                 
             </div>
             {/* Storing content in a card */}
@@ -33,8 +33,8 @@ export default function Weather(props) {
 const minmaxTemp=(min,max)=>{
     return(
         <h3>
-            <span className="px-4">{min}&deg;</span>
-            <span className="px-4">{max}&deg;</span>
+            <span className="px-4">{min}&deg;c</span>
+            <span className="px-4">{max}&deg;c</span>
         </h3>
     )
 }

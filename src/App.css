@@ -35,10 +35,7 @@
   
 
 }
-.container-2{
-  height: 300px;
-  background: red;
-}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
