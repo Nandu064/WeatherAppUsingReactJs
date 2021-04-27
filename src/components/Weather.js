@@ -1,40 +1,46 @@
-import React from 'react'
-// import {Card} from 'react-bootstrap'
-export default function Weather(props) {
+import React from "react";
+import { Card } from 'react-bootstrap'
+import styles from './Weather.module.css'
+const Weather = props => {
+  return (
+    <div className="container text-dark">
+      <div className="Card">
+      {props.cityName ?
+          <Card className={styles.ccard}>
+            <Card.Header className={styles.cardHeader} as="h3">{props.cityName}</Card.Header>
+              <Card.Body className={styles.cardBody}>
+                  <Card.Title className={styles.ctitle}>Temperature Details</Card.Title>
+                      <br></br>
+                  <Card.Text>
+                    <h5 className="py-4">
+                      <i className={`wi ${props.weatherIcon} display-1`} />
+                    </h5>
+                      {props.temp_celsius ? (
+                        <h1 className="py-2">Temp:-{props.temp_celsius}&deg;C</h1>
+                      ) : null}
+                          {maxminTemp(props.temp_min,props.temp_max)}
+                    <h4 className="py-3">
+                        {props.description.charAt(0).toUpperCase() +
+                          props.description.slice(1)}
+                      </h4>
+                  </Card.Text>
+              </Card.Body>
+          </Card>
+      :null}
+      </div>
+    </div>
+  );
+};
+
+export default Weather;
+
+function maxminTemp(min, max) {
+  if (max && min) {
     return (
-        <div className="container">
-            <div className="cards">
-                <h1>{props.city},{props.country}</h1>
-                <h5 className="py-4">
-                    <i className={`wi ${props.weatherIcon} display-1`}></i>
-                </h5>
-                <h1 className="py-2">{props.temp}&deg;c</h1>
-                {/* For min max temp display */}
-                {minmaxTemp(props.minTemp,props.maxTemp)}
-                <h4 className="py-2">{props.description}</h4>
-                
-            </div>
-            {/* Storing content in a card */}
-            {/* <Card className="bg-dark text-white">
-                <Card.Img src="holder.js/100px270" alt="Card image" />
-                <Card.ImgOverlay>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                </Card.Text>
-                <Card.Text>Last updated 3 mins ago</Card.Text>
-                </Card.ImgOverlay>
-            </Card> */}
-        </div>
-        
-    )
-}
-const minmaxTemp=(min,max)=>{
-    return(
-        <h3>
-            <span className="px-4">{min}&deg;c</span>
-            <span className="px-4">{max}&deg;c</span>
-        </h3>
-    )
+      <h3 className={styles.minmax}>
+        <span >Min Temp:-{min}&deg;C</span>
+        <span >Max Temp:-{max}&deg;C</span>
+      </h3>
+    );
+  }
 }

@@ -1,0 +1,19 @@
+form {
+    margin-top: 40px;
+  }
+  
+  form input[name="city"]{
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-bottom: 2px solid burlywood ;
+    border-radius: 0;
+  }
+  form input[name="city"]:focus{
+    background: transparent;
+    color: black;
+    border-bottom: 2px solid burlywood ;
+    box-shadow: none !important;
+  }
+  
+  

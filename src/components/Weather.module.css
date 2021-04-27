@@ -1,0 +1,20 @@
+.ctitle{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.ccard{
+    margin-top: 20px;
+    background-color: antiquewhite;
+}
+.cardHeader{
+    background-color: bisque;
+}
+.minmax{
+    display:flex;
+    width: auto;
+    padding: 0;
+}
+.minmax span{
+    width: 50%;
+    text-align: center;
+}
